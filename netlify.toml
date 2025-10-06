@@ -1,0 +1,8 @@
+[build]
+  base = "."
+  publish = "yearguess/dist"
+  command = "npm install && npm --prefix yearguess install && npm --prefix yearguess run build"
+
+[context.production.environment]
+# Example: set NODE_ENV here if needed
+NODE_ENV = "production"
