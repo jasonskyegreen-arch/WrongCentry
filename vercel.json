@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "yearguess/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
-        "installCommand": "npm install",
-        "buildCommand": "npm run build"
+        "distDir": "public",
+        "installCommand": "npm install && npm --prefix yearguess install",
+        "buildCommand": "npm --prefix yearguess run build && mkdir -p public && cp -a yearguess/dist/. public/"
       }
     }
   ],
