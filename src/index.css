@@ -1,0 +1,67 @@
+/* Basic styles + Tailwind directives (if Tailwind is present) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* Tailwind directives (kept for use if Tailwind is installed correctly) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fallback base styles so the app looks good even if Tailwind isn't processed */
+:root{
+  --bg-1: linear-gradient(180deg,#0f172a 0%, #020617 100%);
+  --card-bg: rgba(255,255,255,0.04);
+  --muted: #9ca3af;
+  --accent: #10b981;
+}
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-1);
+  color: #e6eef8;
+}
+
+/* App container */
+.app-root{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+
+.yg-shell{width:100%;max-width:42rem}
+
+.yg-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:1rem;
+  padding:1.25rem;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 8px 30px rgba(2,6,23,0.6);
+}
+
+.yg-title{font-weight:800;font-size:1.5rem;margin:0 0 0.5rem}
+
+.yg-row{display:flex;gap:0.5rem;justify-content:center;margin:0.25rem 0}
+
+.yg-tile{
+  width:56px;height:56px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:1.125rem;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);
+}
+.yg-tile.empty{background:rgba(255,255,255,0.02);color:#cbd5e1}
+.yg-tile.green{background:#16a34a;color:white}
+.yg-tile.low{background:#facc15;color:#111}
+.yg-tile.high{background:#fb923c;color:white}
+
+.yg-btn{display:inline-block;padding:0.5rem 0.75rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+.yg-btn.primary{background:#10b981;color:white;border:none}
+
+.yg-pill{padding:0.35rem 0.6rem;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:transparent;margin-right:0.4rem}
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;z-index:50}
+.modal{background:#0b1220;padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.04);max-width:28rem}
+
+/* Responsive tile sizing similar to original classes */
+@media (max-width:640px){
+  .yg-tile{width:48px;height:48px}
+}
+
